@@ -6,9 +6,15 @@ You ask it a normal question in plain English. It figures out on its own whether
 
  **Dataset:**
 A cleaned personal finance CSV (Date, Category, Amount, Type) with ~1,500 real transactions from 2020–2024.
+
+
  **Categorization tool:** 
 Takes a transaction description and classifies it into one of 10 categories (Entertainment, Food & Drink, Health & Fitness, Investment, Other, Rent, Salary, Shopping, Travel, Utilities) using an LLM, with a fallback so it never returns something outside that list.
+
+
  **Query tool:**
 Filters the dataset by year, month, category, and type (Income/Expense), and returns the total amount — or a clear "no transactions found" message if nothing matches.
+
+
  **The agent:**
 Built with LangChain's create_agent, running on Groq's llama-3.1-8b-instant. It reads your question, decides which tool(s) to call, runs them, and replies in plain language.
